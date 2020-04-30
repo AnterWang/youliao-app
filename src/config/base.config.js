@@ -19,7 +19,7 @@ let config = {
 		// wxAuthH5: 'https://hh-oss-html.miyapay.com/saas/testing/wx_pay_auth/index.html',
 
 		// 开发地址
-		path: 'https://saas-zuultest.miyapay.com',
+		path: '',
 		// wxAuthH5: 'https://hh-oss-html.miyapay.com/saas/testing/wx_pay_auth/index.html',
 
 	},

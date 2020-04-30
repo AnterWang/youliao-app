@@ -54,11 +54,17 @@
 
 	},
 	"mp-weixin": { /* 微信小程序特有相关 */
-		"appid": "wx078c4b724251f50e",
+		"appid": "wx0803b9344e0f91ba",
 		"setting": {
 			"urlCheck": false
 		},
-		"usingComponents": true
+		"usingComponents": true,
+		"plugins" : {  
+            "WechatSI" : {  
+                "version" : "0.3.3",  
+                "provider" : "wx069ba97219f66d99"  
+            }  
+        }
 	},
 	"mp-alipay" : {
         "usingComponents" : true
