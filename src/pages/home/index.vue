@@ -36,9 +36,9 @@ export default {
                 url: "/pages/news/index"
             })
         }, 2000)
-        this.$store.dispatch('updateClass').then(res => {
+        // this.$store.dispatch('updateClass').then(res => {
 
-        })
+        // })
     },
     methods: {
 

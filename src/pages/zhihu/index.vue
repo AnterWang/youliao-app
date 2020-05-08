@@ -13,8 +13,8 @@
                 </swiper-item>
             </swiper>
         </view>
-        <view v-if="timeGone" class="toptitle">最新资讯</view>
-        <view v-if="timeGone" class="list">
+        <view class="toptitle">最新资讯</view>
+        <view class="list">
             <view
                 class="item"
                 v-for="(item, index) in listData"
@@ -30,34 +30,6 @@
                     class="img"
                     :src="item.imgList[0]"
                 />
-            </view>
-        </view>
-        <view v-if="!timeGone">
-            <view class="header">
-                <swiper
-                    class="swipers"
-                    :indicator-dots="true"
-                    :autoplay="true"
-                    :interval="3000"
-                    :duration="500"
-                >
-                    <swiper-item v-for="(item, index) in swiperData" :key="index">
-                        <image class="img" :src="item.img" @click="imgjump(item)" />
-                    </swiper-item>
-                </swiper>
-            </view>
-            <view class="header">
-                <swiper
-                    class="swipers"
-                    :indicator-dots="true"
-                    :autoplay="true"
-                    :interval="3000"
-                    :duration="500"
-                >
-                    <swiper-item v-for="(item, index) in swiperData" :key="index">
-                        <image class="img" :src="item.img" @click="imgjump(item)" />
-                    </swiper-item>
-                </swiper>
             </view>
         </view>
     </view>
@@ -96,8 +68,6 @@ export default {
                     url: 'sss'
                 }
             ],
-            // 
-            timeGone: false,
         }
     },
     computed: {
@@ -113,12 +83,6 @@ export default {
     },
     onLoad () {
         this.getList()
-        // 时间审核 显示
-        let time = Math.round(new Date() / 1000)
-        console.log(time)
-        if (time > 1588933800) {
-            this.timeGone = true
-        }
     },
     onShow () {
         uni.hideHomeButton()
@@ -156,7 +120,7 @@ export default {
         },
         jumpDetail (item) {
             uni.navigateTo({
-                url: '/pages/newsDetail/index?title=' + encodeURIComponent(item.title) + '&source=' + encodeURIComponent(item.source) + '&postTime=' + encodeURIComponent(item.postTime) + '&newsId=' + encodeURIComponent(item.newsId)
+                url: '/pages/zhihu/zhihuDetail?title=' + encodeURIComponent(item.title) + '&source=' + encodeURIComponent(item.source) + '&postTime=' + encodeURIComponent(item.postTime) + '&newsId=' + encodeURIComponent(item.newsId)
             })
         },
         imgjump (item) {

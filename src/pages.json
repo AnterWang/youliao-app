@@ -48,6 +48,18 @@
 			"style": {
 				"navigationBarTitleText": "index"
 			}
+		},
+		{
+			"path": "pages/zhihu/index",
+			"style": {
+				"navigationBarTitleText": "index"
+			}
+		},
+		{
+			"path": "pages/zhihu/zhihuDetail",
+			"style": {
+				"navigationBarTitleText": "index"
+			}
 		}
 	],
 	"globalStyle": {
@@ -58,7 +70,7 @@
 	},
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#4285f4",
+		"selectedColor": "#1476FF",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [
