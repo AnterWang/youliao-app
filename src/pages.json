@@ -48,18 +48,6 @@
 			"style": {
 				"navigationBarTitleText": "index"
 			}
-		},
-		{
-			"path": "pages/zhihu/index",
-			"style": {
-				"navigationBarTitleText": "index"
-			}
-		},
-		{
-			"path": "pages/zhihu/zhihuDetail",
-			"style": {
-				"navigationBarTitleText": "index"
-			}
 		}
 	],
 	"globalStyle": {
