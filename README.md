@@ -9,6 +9,7 @@ yarn run dev:<mp-weixin | mp-alipay>
 ##### 打包
 ```
 yarn run build:<mp-weixin | mp-alipay>
+是
 ```
 
 #### 项目结构
