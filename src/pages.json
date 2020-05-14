@@ -1,6 +1,18 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/activity/joke",
+			"style": {
+				"navigationBarTitleText": "随机一笑"
+			}
+		},
+		{
+			"path": "pages/activity/historyToday",
+			"style": {
+				"navigationBarTitleText": "历史上的今天"
+			}
+		},
+		{
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "有料100"
@@ -9,7 +21,7 @@
 		{
 			"path": "pages/news/index",
 			"style": {
-				"navigationBarTitleText": "资讯",
+				"navigationBarTitleText": "有料100",
 				"enablePullDownRefresh": true
 			}
 		},
@@ -20,19 +32,19 @@
 			}
 		},
 		{
-			"path": "pages/refuseSearch/index",
+			"path": "pages/refuseClass/refuseSearch",
 			"style": {
 				"navigationBarTitleText": "查询结果"
 			}
 		},
 		{
-			"path": "pages/newsDetail/index",
+			"path": "pages/news/newsDetail",
 			"style": {
 				"navigationBarTitleText": "资讯详情"
 			}
 		},
 		{
-			"path": "pages/activity/beijing",
+			"path": "pages/refuseClass/beijing",
 			"style": {
 				"navigationBarTitleText": "北京垃圾分类指南"
 			}
@@ -40,21 +52,27 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "index"
+				"navigationBarTitleText": "有料100"
 			}
 		},
 		{
 			"path": "pages/webview/index",
 			"style": {
-				"navigationBarTitleText": "index"
+				"navigationBarTitleText": "有料100"
+			}
+		},
+		{
+			"path": "pages/video/index",
+			"style": {
+				"navigationBarTitleText": "热视频"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "有料100",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#1476FF",
+		"backgroundColor": "#ffffff"
 	},
 	"tabBar": {
 		"color": "#7A7E83",
@@ -69,10 +87,10 @@
 				"text": "资讯"
 			},
 			{
-				"pagePath": "pages/refuseClass/index",
+				"pagePath": "pages/index/index",
 				"iconPath": "static/delete.png",
 				"selectedIconPath": "static/delete2.png",
-				"text": "垃圾分类"
+				"text": "热点"
 			}
 		]
 	}

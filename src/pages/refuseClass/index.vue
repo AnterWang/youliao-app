@@ -147,7 +147,7 @@ export default {
         },
         jump () {
             uni.navigateTo({
-                url: '/pages/activity/beijing'
+                url: '/pages/refuseClass/beijing'
             })
         },
         // 语音

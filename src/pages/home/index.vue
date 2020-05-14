@@ -33,12 +33,12 @@ export default {
     onLoad () {
         setTimeout(() => {
             uni._switchTab({
-                url: "/pages/news/index"
+                url: "/pages/index/index"
             })
         }, 2000)
-        // this.$store.dispatch('updateClass').then(res => {
+        this.$store.dispatch('updateClass').then(res => {
 
-        // })
+        })
     },
     methods: {
 

@@ -1,6 +1,6 @@
 <template>
     <view class="page-wrapper">
-        <view class="header">
+        <!-- <view class="header">
             <swiper
                 class="swipers"
                 :indicator-dots="true"
@@ -12,8 +12,24 @@
                     <image class="img" :src="item.img" @click="imgjump(item)" />
                 </swiper-item>
             </swiper>
-        </view>
-        <view v-if="timeGone" class="toptitle">最新资讯</view>
+        </view>-->
+
+        <scroll-view
+            scroll-x
+            class="bg-white nav"
+            scroll-with-animation
+            :scroll-left="scrollLeft"
+            style="position:fixed;top:0;z-index:1;"
+        >
+            <view
+                class="cu-item"
+                :class="item.typeId==TabCur?'text-blue cur':''"
+                v-for="(item,index) in news.classData"
+                :key="index"
+                @tap="tabSelect(item,index)"
+            >{{item.typeName}}</view>
+        </scroll-view>
+        <view v-if="timeGone" class="toptitle">{{TabCurName}}</view>
         <view v-if="timeGone" class="list">
             <view
                 class="item"
@@ -32,6 +48,9 @@
                 />
             </view>
         </view>
+        <view class="bottomText" v-if="loading">加载中...</view>
+        <view class="bottomText" v-if="page===10">我是有底线的～</view>
+
         <view v-if="!timeGone">
             <view class="header">
                 <swiper
@@ -77,8 +96,9 @@ export default {
         return {
             isOverShare: true,
             listData: [],
-            page: 0,
+            page: 1,
             flag: 0, // 触发器
+            loading: false,
             swiperData: [
                 {
                     img: 'https://hh-oss-html.miyapay.com/hhops/picture/158815589843829fee8926e26',
@@ -96,22 +116,29 @@ export default {
                     url: 'sss'
                 }
             ],
+            // tab
+            TabCur: 0,
+            TabCurName: '',
+            scrollLeft: 0,
             // 
             timeGone: false,
+
         }
     },
     computed: {
-        ...mapState(['system', 'user', 'news']),
+        ...mapState(['system', 'user', 'news'])
     },
     watch: {
         'flag': function (val, oldval) {
             if (val > 0) {
-                this.page = 0
+                this.page = 1
                 this.getList()
             }
         }
     },
     onLoad () {
+        this.TabCur = this.news.classData[0].typeId
+        this.TabCurName = this.news.classData[0].typeName
         this.getList()
         // 时间审核 显示
         let time = Math.round(new Date() / 1000)
@@ -130,7 +157,7 @@ export default {
         }, 500)
     },
     onReachBottom () {
-        if (Number(this.page + 1) < this.news.classData.length) {
+        if (this.page < 10) {
             this.page++
             this.getList()
         } else {
@@ -142,25 +169,34 @@ export default {
     },
     methods: {
         getList () {
-            // 头条
-            newsList(this.news.classData[this.page], 1).then(res => {
+            this.loading = true
+            newsList(this.TabCur, this.page).then(res => {
                 if (res.code === 1) {
-                    if (this.page === 0) {
+                    if (this.page === 1) {
                         this.listData = []
                     }
                     if (res.data && res.data.length > 0) {
                         this.listData.push(...res.data)
                     }
+                    this.loading = false
                 }
             })
         },
         jumpDetail (item) {
             uni.navigateTo({
-                url: '/pages/newsDetail/index?title=' + encodeURIComponent(item.title) + '&source=' + encodeURIComponent(item.source) + '&postTime=' + encodeURIComponent(item.postTime) + '&newsId=' + encodeURIComponent(item.newsId)
+                url: '/pages/news/newsDetail?title=' + encodeURIComponent(item.title) + '&source=' + encodeURIComponent(item.source) + '&postTime=' + encodeURIComponent(item.postTime) + '&newsId=' + encodeURIComponent(item.newsId)
             })
         },
-        imgjump (item) {
-
+        tabSelect (item, index) {
+            this.TabCur = item.typeId
+            this.TabCurName = item.typeName
+            this.scrollLeft = (index - 1) * 60
+            this.page = 1
+            this.getList()
+            uni.pageScrollTo({
+                scrollTop: 0,
+                duration: 500
+            })
         }
 
     }
@@ -178,7 +214,7 @@ export default {
     line-height: 42rpx;
     color: #222222;
     font-weight: 500;
-    margin-top: 60rpx;
+    margin-top: 130rpx;
     margin-bottom: 10rpx;
 }
 .list {
@@ -236,5 +272,12 @@ export default {
         height: 100%;
         background-size: 100%;
     }
+}
+.bottomText {
+    color: #999999;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    text-align: center;
+    padding-bottom: 32rpx;
 }
 </style>

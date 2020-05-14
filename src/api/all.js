@@ -31,3 +31,17 @@ export function rubbishSearch(name) {
         url: `${url}/rubbish/type?app_id=${app_id}&app_secret=${app_secret}&name=${name}`,
     })
 }
+
+// 历史上的今天
+export function historyToday(type) {
+    return request.get({
+        url: `${url}/history/today?app_id=${app_id}&app_secret=${app_secret}&type=${type}`,
+    })
+}
+
+// 笑话
+export function jokeList(type) {
+    return request.get({
+        url: `${url}/jokes/list/random?app_id=${app_id}&app_secret=${app_secret}`,
+    })
+}
