@@ -49,7 +49,7 @@
             </view>
         </view>
         <view class="bottomText" v-if="loading">加载中...</view>
-        <view class="bottomText" v-if="page===10">我是有底线的～</view>
+        <view class="bottomText" v-if="!loading && page===10">我是有底线的～</view>
 
         <view v-if="!timeGone">
             <view class="header">
@@ -94,7 +94,6 @@ import {
 export default {
     data () {
         return {
-            isOverShare: true,
             listData: [],
             page: 1,
             flag: 0, // 触发器
@@ -120,7 +119,9 @@ export default {
             TabCur: 0,
             TabCurName: '',
             scrollLeft: 0,
-            // 
+            // 分享
+            isOverShare: true,
+            // 时间审核
             timeGone: false,
 
         }
@@ -170,6 +171,9 @@ export default {
     methods: {
         getList () {
             this.loading = true
+            uni.showLoading({
+                title: '加载中'
+            })
             newsList(this.TabCur, this.page).then(res => {
                 if (res.code === 1) {
                     if (this.page === 1) {

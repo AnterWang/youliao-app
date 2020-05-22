@@ -1,9 +1,30 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/activity/image",
+			"style": {
+				"navigationBarTitleText": "每日好图",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/video/index",
+			"style": {
+				"navigationBarTitleText": "热点视频",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/video/videoDetail",
+			"style": {
+				"navigationBarTitleText": "热点视频"
+			}
+		},
+		{
 			"path": "pages/activity/joke",
 			"style": {
-				"navigationBarTitleText": "随机一笑"
+				"navigationBarTitleText": "随机一笑",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -60,12 +81,6 @@
 			"style": {
 				"navigationBarTitleText": "有料100"
 			}
-		},
-		{
-			"path": "pages/video/index",
-			"style": {
-				"navigationBarTitleText": "热视频"
-			}
 		}
 	],
 	"globalStyle": {
@@ -82,14 +97,14 @@
 		"list": [
 			{
 				"pagePath": "pages/news/index",
-				"iconPath": "static/read2.png",
-				"selectedIconPath": "static/read.png",
+				"iconPath": "static/news.png",
+				"selectedIconPath": "static/newsfill.png",
 				"text": "资讯"
 			},
 			{
 				"pagePath": "pages/index/index",
-				"iconPath": "static/delete.png",
-				"selectedIconPath": "static/delete2.png",
+				"iconPath": "static/hot.png",
+				"selectedIconPath": "static/hotfill.png",
 				"text": "热点"
 			}
 		]
