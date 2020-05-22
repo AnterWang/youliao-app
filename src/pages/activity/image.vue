@@ -10,7 +10,7 @@
             />
         </view>
         <view class="bottomText" v-if="loading">加载中...</view>
-        <view class="bottomText" v-if="!loading && page===10">我是有底线的～</view>
+        <view class="bottomText" v-if="!loading && page===100">我是有底线的～</view>
     </view>
 </template>
 
@@ -55,7 +55,7 @@ export default {
         }, 500)
     },
     onReachBottom () {
-        if (this.page < 10) {
+        if (this.page < 100) {
             this.page++
             this.getList()
         } else {
@@ -96,7 +96,7 @@ export default {
 .list {
     padding: 30rpx;
     image {
-        width: 100%ƒ;
+        width: 100%;
     }
 }
 .bottomText {

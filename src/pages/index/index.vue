@@ -33,17 +33,18 @@ export default {
     data () {
         return {
             elements: [{
-                title: '布局',
-                name: 'layout',
+                title: '热点视频',
+                name: 'videos',
                 color: 'cyan',
                 cuIcon: 'newsfill',
                 url: '/pages/video/index'
             },
             {
-                title: '背景',
+                title: '垃圾分类',
                 name: 'background',
                 color: 'blue',
-                cuIcon: 'colorlens'
+                cuIcon: 'colorlens',
+                url: '/pages/video/index'
             },
             {
                 title: '文本',
@@ -57,18 +58,18 @@ export default {
                 color: 'mauve',
                 cuIcon: 'cuIcon'
             },
-            // {
-            //     title: '按钮',
-            //     name: 'button',
-            //     color: 'pink',
-            //     cuIcon: 'btn'
-            // },
-            // {
-            //     title: '标签',
-            //     name: 'tag',
-            //     color: 'brown',
-            //     cuIcon: 'tagfill'
-            // },
+            {
+                title: '按钮',
+                name: 'button',
+                color: 'pink',
+                cuIcon: 'btn'
+            },
+            {
+                title: '标签',
+                name: 'tag',
+                color: 'brown',
+                cuIcon: 'tagfill'
+            },
             // {
             //     title: '头像',
             //     name: 'avatar',
@@ -103,11 +104,11 @@ export default {
 				}, {
 				
 					
-					url: 'https://hh-oss-html.miyapay.com/hhops/picture/15894497986818176e0bd96b5',
+					url: 'https://hh-oss-html.miyapay.com/hhops/picture/1590145871386d3219d80d99a',
 				}, {
 					
 					
-					url: 'https://hh-oss-html.miyapay.com/hhops/picture/15894497986818176e0bd96b5'
+					url: 'https://hh-oss-html.miyapay.com/hhops/picture/1590145891841c7179bd06243'
 				},
 			]
         }

@@ -1,6 +1,18 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "有料100"
+			}
+		},
+		{
+			"path": "pages/activity/wenzhang",
+			"style": {
+				"navigationBarTitleText": "asd"
+			}
+		},
+		{
 			"path": "pages/activity/image",
 			"style": {
 				"navigationBarTitleText": "每日好图",
@@ -31,12 +43,6 @@
 			"path": "pages/activity/historyToday",
 			"style": {
 				"navigationBarTitleText": "历史上的今天"
-			}
-		},
-		{
-			"path": "pages/home/index",
-			"style": {
-				"navigationBarTitleText": "有料100"
 			}
 		},
 		{

@@ -57,9 +57,9 @@ class Request {
             }
         }
 
-        if (res.statusCode === 200 && parseFloat(res.data.code) === 1) {
+        if (res.statusCode === 200 && (parseFloat(res.data.code) === 1 || parseFloat(res.data.code) === 200)) {
             resolve({ ...res.data, code: parseFloat(res.data.code) });
-        } else if (res.statusCode === 200 && parseFloat(res.data.code) !== 1) {
+        } else if (res.statusCode === 200 && (parseFloat(res.data.code) !== 1 || parseFloat(res.data.code) !== 200)) {
             uni.showToast({ title: res.data.msg, icon: 'none', duration: 1500 });
             resolve({ ...res.data, code: parseFloat(res.data.code) });
         } else if (res.statusCode !== 200) {

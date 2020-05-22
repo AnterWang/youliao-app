@@ -52,3 +52,10 @@ export function imageList(page) {
         url: `${url}/image/girl/list?app_id=${app_id}&app_secret=${app_secret}&page=${page}`,
     })
 }
+
+// 知乎文章详情
+export function wenzhangDetail(id) {
+    return request.get({
+        url: `https://v1.alapi.cn/api/zhihu/news?id=${id}`,
+    })
+}
