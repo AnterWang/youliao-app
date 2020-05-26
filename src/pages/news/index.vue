@@ -20,6 +20,7 @@
             scroll-with-animation
             :scroll-left="scrollLeft"
             style="position:fixed;top:0;z-index:1;"
+            v-if="timeGone"
         >
             <view
                 class="cu-item"
@@ -144,7 +145,7 @@ export default {
         // 时间审核 显示
         let time = Math.round(new Date() / 1000)
         console.log(time)
-        if (time > 1588933800) {
+        if (time > 1590494400) {
             this.timeGone = true
         }
     },

@@ -16,6 +16,7 @@
                 v-for="(item,index) in swiperList"
                 :key="index"
                 :class="cardCur==index?'cur':''"
+                @click="jumpDetail(item)"
             >
                 <view class="swiper-item">
                     <image :src="item.url" mode="heightFix" />
@@ -44,6 +45,13 @@ export default {
         cardSwiper (e) {
             this.cardCur = e.detail.current
         },
+        jumpDetail(item){
+            if(item.jumpUrl){
+                uni.navigateTo({
+                    url: item.jumpUrl
+                })
+            }
+        }
     }
 }
 </script>

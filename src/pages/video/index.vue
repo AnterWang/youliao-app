@@ -1,6 +1,6 @@
 <template>
     <view class="page-wrapper">
-        <view class="cu-card case">
+        <view class="cu-card case" v-if="timeGone">
             <block v-for="(item,index) in listData" :key="index">
                 <view class="cu-item shadow">
                     <view class="image" @click="jumpDetail(item)">
@@ -40,6 +40,9 @@
                 </view>
             </block>
         </view>
+        <view class="cu-card case" v-if="!timeGone">
+            尽情期待
+        </view>
         <view class="bottomText" v-if="loading">加载中...</view>
         <view class="bottomText" v-if="!loading && page===10">我是有底线的,回到顶部下拉刷新一下吧～</view>
     </view>
@@ -60,6 +63,8 @@ export default {
             listData: [],
             loading: false,
             flag: 0, // 触发器
+            // 时间审核
+            timeGone: false,
         }
     },
     computed: {
@@ -75,6 +80,12 @@ export default {
     },
     onLoad () {
         this.getList()
+        // 时间审核 显示
+        let time = Math.round(new Date() / 1000)
+        console.log(time)
+        if (time > 1590494400) {
+            this.timeGone = true
+        }
     },
     onShow () {
 

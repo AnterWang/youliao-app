@@ -36,39 +36,43 @@ export default {
                 title: '热点视频',
                 name: 'videos',
                 color: 'cyan',
-                cuIcon: 'newsfill',
+                cuIcon: 'videofill',
                 url: '/pages/video/index'
             },
             {
                 title: '垃圾分类',
-                name: 'background',
+                name: 'refuse',
                 color: 'blue',
-                cuIcon: 'colorlens',
-                url: '/pages/video/index'
+                cuIcon: 'deletefill',
+                url: '/pages/refuseClass/index'
             },
             {
-                title: '文本',
-                name: 'text',
+                title: '历史的今天',
+                name: 'history on today',
                 color: 'purple',
-                cuIcon: 'font'
+                cuIcon: 'activityfill',
+                url: '/pages/activity/historyToday'
             },
             {
-                title: '图标 ',
-                name: '/pages/video/index',
+                title: '每日美图',
+                name: 'picture',
                 color: 'mauve',
-                cuIcon: 'cuIcon'
+                cuIcon: 'pic',
+                url: '/pages/activity/image'
             },
             {
-                title: '按钮',
-                name: 'button',
+                title: '随机一笑',
+                name: 'jokes',
                 color: 'pink',
-                cuIcon: 'btn'
+                cuIcon: 'emoji',
+                url: '/pages/activity/joke'
             },
             {
-                title: '标签',
+                title: '文章',
                 name: 'tag',
                 color: 'brown',
-                cuIcon: 'tagfill'
+                cuIcon: 'copy',
+                url: '/pages/activity/wenzhang'
             },
             // {
             //     title: '头像',
@@ -98,16 +102,13 @@ export default {
 			// 
 			swiperList: [
 				{
-				
-					
+                    jumpUrl: '/pages/refuseClass/index',
 					url: 'https://hh-oss-html.miyapay.com/hhops/picture/15894497986818176e0bd96b5'
 				}, {
-				
-					
+                    jumpUrl: '/pages/activity/historyToday',
 					url: 'https://hh-oss-html.miyapay.com/hhops/picture/1590145871386d3219d80d99a',
 				}, {
-					
-					
+					jumpUrl: '/pages/video/index',
 					url: 'https://hh-oss-html.miyapay.com/hhops/picture/1590145891841c7179bd06243'
 				},
 			]

@@ -1,6 +1,6 @@
 <template>
     <view class="page-wrapper">
-        <view v-html="con"></view>
+        <view>尽请期待</view>
     </view>
 </template>
 
