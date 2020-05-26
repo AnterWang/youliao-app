@@ -111,14 +111,51 @@ export default {
 					jumpUrl: '/pages/video/index',
 					url: 'https://hh-oss-html.miyapay.com/hhops/picture/1590145891841c7179bd06243'
 				},
-			]
+            ],
+            // 时间审核
+            timeGone: false,
         }
     },
     computed: {
 		...mapState(['system', 'user']),
     },
     onLoad () {
-
+        // 时间审核 显示
+        let time = Math.round(new Date() / 1000)
+        console.log(time)
+        if (time > 1590494400) {
+            this.timeGone = true
+        }else{
+            this.elements = [
+            {
+                title: '垃圾分类',
+                name: 'refuse',
+                color: 'blue',
+                cuIcon: 'deletefill',
+                url: '/pages/refuseClass/index'
+            },
+            {
+                title: '历史的今天',
+                name: 'history on today',
+                color: 'purple',
+                cuIcon: 'activityfill',
+                url: '/pages/activity/historyToday'
+            },
+            {
+                title: '每日美图',
+                name: 'picture',
+                color: 'mauve',
+                cuIcon: 'pic',
+                url: '/pages/activity/image'
+            },
+            {
+                title: '随机一笑',
+                name: 'jokes',
+                color: 'pink',
+                cuIcon: 'emoji',
+                url: '/pages/activity/joke'
+            }]
+        }
     },
     onShow () {
         uni.hideHomeButton()
